@@ -1,103 +1,38 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>calculator</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-        }
-        .calculator {
-            width: 250px;
-            background: lightblue;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px, rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        .display {
-            width: 100%;
-            height: 50px;
-            font-size: 1.5em;
-            text-align: right;
-            padding: 10px;
-            border: none;
-            outline: none;
-            margin-bottom: 10px;
-            background: #eee;
-        }
-        .buttons {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px
-        }
-        button {
-            width: 100%;
-            height: 50px;
-            font-size: 1.2em;
-            border: none;
-            cursor: pointer;
-            background: #ddd;
-            border-radius: 5px;
-        }
-        button.opertaor {
-            background: orange;
-            color: white;
-        }
-        button.equal {
-            background: green;
-            color: white;
-        }
-        
-        
-    </style>
-
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="calculator">
-        <input type="text" class="display" id="display" disabled>
+        <input type="text" id="display" readonly>
         <div class="buttons">
-            <button onclick="clearDisplay()" class="clear">C</button>
-            <button onclick="appendValue('/')" class="operator">C</button>
-            <button onclick="appendValue('*')" class="opertaor">c</button>
-            <button onclick="appendValue('-')" class="operator">c</button>
-            <button onclick="appendValue('7')">7</button>
-            <button onclick="appendValue('8')">8</button>
-            <button onclick="appendValue('9')">9</button>
-            <button onclick="appendValue('+')" class="operator">+</button>
-            <button onclick="appendValue('4')">4</button>
-            <button onclick="appendValue('5')">5</button>
-            <button onclick="appendValue('6')">6</button>
-            <button onclick="calculateResult()" class="equal">=</button>
-            <button onclick="appendValue('1')">1</button>
-            <button onclick="appendValue('2')">2</button>
-            <button onclick="appendValue('3')">3</button>
-            <button onclick="appendValue('0')" style="grid-column: span 2;"></button>
-            <button onclick="appendValue('.')">.</button>
+            <button class="operator">C</button>
+            <button class="operator">←</button>
+            <button class="operator">%</button>
+            <button class="operator">/</button>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button class="operator">*</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button class="operator">-</button>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button class="operator">+</button>
+            <button>0</button>
+            <button>00</button>
+            <button>.</button>
+            <button class="equal">=</button>
         </div>
     </div>
-    <script>
-            function appendValue(value){
-                document.getElementById("display").value += value;
-            }
-            function clearDisplay(){
-                document.getElementById("display").value = "";
-            }
-            function calculateResult() {
-                 try{
-                    document.getElementById("display").value = eval(document.getElementById("display").value);
-                 } catch {
-                    document.getElementById("display").value = "Error";
-                 }
-            }
-    </script>
-    
-    
+    <script src="script.js"></script>
 </body>
 </html>
+  
